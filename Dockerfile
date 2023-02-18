@@ -3,11 +3,12 @@ FROM mbentley/ubuntu:22.04
 LABEL maintainer="Matt Bentley <mbentley@mbentley.net>"
 
 ARG DEBIAN_FRONTEND=noninteractive
+ARG BMPS_VER
 
 # install BeamMP-Server & dependencies
 RUN apt-get update &&\
   apt-get install --no-install-recommends -y ca-certificates curl jq liblua5.3-0 libssl3 &&\
-  BMPS_VER="$(curl -s https://api.github.com/repos/BeamMP/BeamMP-Server/releases/latest | jq -r .tag_name)" &&\
+  BMPS_VER=$(if [ -z "${BMPS_VER}" ]; then curl -s https://api.github.com/repos/BeamMP/BeamMP-Server/releases/latest | jq -r .tag_name; else echo "${BMPS_VER}"; fi) &&\
   apt-get purge -y jq &&\
   apt-get autoremove -y &&\
   rm -rf /var/lib/apt/lists/* &&\
