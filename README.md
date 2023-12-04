@@ -1,7 +1,7 @@
 # mbentley/beammp-server
 
 docker image for [BeamMP-Server](https://github.com/BeamMP/BeamMP-Server)
-based off of mbentley/debian:bullseye
+based off of mbentley/ubuntu:22.04
 
 To pull this image:
 `docker pull mbentley/beammp-server`
