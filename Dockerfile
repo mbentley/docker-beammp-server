@@ -13,7 +13,7 @@ RUN apt-get update &&\
   apt-get autoremove -y &&\
   rm -rf /var/lib/apt/lists/* &&\
   mkdir -p /data &&\
-  curl -sL -o /usr/local/bin/BeamMP-Server "https://github.com/BeamMP/BeamMP-Server/releases/download/${BMPS_VER}/BeamMP-Server-ubuntu-22.04" &&\
+  curl -sL -o /usr/local/bin/BeamMP-Server "https://github.com/BeamMP/BeamMP-Server/releases/download/${BMPS_VER}/BeamMP-Server-linux" &&\
   chmod +x /usr/local/bin/BeamMP-Server &&\
   groupadd -g 516 beammp-server &&\
   useradd -u 516 -g 516 -d /data beammp-server &&\
