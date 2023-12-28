@@ -1,5 +1,5 @@
 # rebased/repackaged base image that only updates existing packages
-FROM mbentley/ubuntu:22.04
+FROM mbentley/debian:bookworm
 LABEL maintainer="Matt Bentley <mbentley@mbentley.net>"
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -13,7 +13,7 @@ RUN apt-get update &&\
   apt-get autoremove -y &&\
   rm -rf /var/lib/apt/lists/* &&\
   mkdir -p /data &&\
-  wget -q -O /usr/local/bin/BeamMP-Server "https://github.com/BeamMP/BeamMP-Server/releases/download/${BMPS_VER}/BeamMP-Server-ubuntu" &&\
+  wget -q -O /usr/local/bin/BeamMP-Server "https://github.com/BeamMP/BeamMP-Server/releases/download/${BMPS_VER}/BeamMP-Server-debian" &&\
   chmod +x /usr/local/bin/BeamMP-Server &&\
   groupadd -g 516 beammp-server &&\
   useradd -u 516 -g 516 -d /data beammp-server &&\

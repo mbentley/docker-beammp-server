@@ -1,7 +1,7 @@
 # mbentley/beammp-server
 
 docker image for [BeamMP-Server](https://github.com/BeamMP/BeamMP-Server)
-based off of mbentley/ubuntu:22.04
+based off of mbentley/debian:bookworm
 
 For a list of tags, see [mbentley/beammp-server](https://hub.docker.com/r/mbentley/beammp-server/tags) on Docker Hub.
 
