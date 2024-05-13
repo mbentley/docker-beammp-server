@@ -7,14 +7,15 @@ based off of mbentley/debian:bookworm
 
 For a list of tags, see [mbentley/beammp-server](https://hub.docker.com/r/mbentley/beammp-server/tags) on Docker Hub. I plan on keeping up to date with the official [BeamMP/BeamMP-Server releases](https://github.com/BeamMP/BeamMP-Server/releases).
 
-* `3.4.0` - latest pre-release
-* `latest`, `3.3.0` - latest release
-* `3.2.2`
+* `latest`, `3.4.1` - latest release
+* `3.4.0`
+* `3.3.0`
 
 ### Archived Tags
 
 These tags are no longer actively built to patch security vulnerabilities:
 
+* `3.2.2`
 * `3.2.0`
 * `3.1.3`
 
