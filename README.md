@@ -27,7 +27,8 @@ To pull this image:
 ### Running a basic container with persistent data
 
 ```bash
-docker run -d \
+docker run -itd \
+  --init \
   -p 30814:30814 \
   --name beammp-server \
   -v /data/beammp-server:/data \
@@ -39,7 +40,8 @@ docker run -d \
 There is an example `beammp-server.env` file which can be used to setup the server without having to directly modify the `ServerConfig.toml`
 
 ```bash
-docker run -d \
+docker run -itd \
+  --init \
   -p 30814:30814 \
   --name beammp-server \
   --env-file beammp-server.env \
@@ -50,7 +52,8 @@ docker run -d \
 You can also set environment variables as a part of the run command or combine them along with the env file. Env vars passed as a part of the run command will override what is in the config file. Here's an example of doing that, overriding the map:
 
 ```bash
-docker run -d \
+docker run -itd \
+  --init \
   -p 30814:30814 \
   --name beammp-server \
   --env-file beammp-server.env \
