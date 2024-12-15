@@ -1,0 +1,17 @@
+ARG BASE_VER=latest
+FROM mbentley/beammp-server:${BASE_VER}
+
+# switch to the root user to install more packages
+USER root
+ARG DEBIAN_FRONTEND=noninteractive
+
+# install screen & tini (to manage the signals sent to screen to prevent it from hanging)
+RUN apt-get update &&\
+  apt-get install --no-install-recommends -y screen tini &&\
+  rm -rf /var/lib/apt/lists/*
+
+# switch back to the non-root user
+USER beammp-server
+
+# custom CMD to run tini + screen
+CMD ["tini","--","screen","-S","beammp","-m","--","/usr/local/bin/BeamMP-Server"]
