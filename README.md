@@ -69,9 +69,9 @@ To build an image on your own:
 
 ```bash
 docker build \
-  --build-arg BMPS_VER="v3.4.1" \
+  --build-arg BMPS_VER="v3.9.0" \
   --build-arg ARTIFACT_NAME="BeamMP-Server.debian.12.x86_64" \
-  -t mbentley/beammp-server:3.4.1 .
+  -t mbentley/beammp-server:3.9.0 .
 ```
 
 Older versions (`3.2.0` and `3.1.3`) had different artifact names so you need to substitute in `--build-arg ARTIFACT_NAME="BeamMP-Server-debian"`.
