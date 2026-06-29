@@ -7,13 +7,14 @@ based off of mbentley/debian:bookworm
 
 For a list of tags, see [mbentley/beammp-server](https://hub.docker.com/r/mbentley/beammp-server/tags) on Docker Hub. I plan on keeping up to date with the official [BeamMP/BeamMP-Server releases](https://github.com/BeamMP/BeamMP-Server/releases).
 
-* `latest`, `3.9.0` - latest release
-* `3.4.1` - previous release
+* `latest`, `3.9.3` - latest release
 
 ### Archived Tags
 
 These tags are no longer actively re-built to patch security vulnerabilities but are still available on Docker Hub:
 
+* `3.9.0`
+* `3.4.1`
 * `3.4.0`
 * `3.3.0`
 * `3.2.2`
@@ -69,9 +70,9 @@ To build an image on your own:
 
 ```bash
 docker build \
-  --build-arg BMPS_VER="v3.9.0" \
-  --build-arg ARTIFACT_NAME="BeamMP-Server.debian.12.x86_64" \
-  -t mbentley/beammp-server:3.9.0 .
+  --build-arg BMPS_VER="v3.9.3" \
+  --build-arg ARTIFACT_NAME="BeamMP-Server.debian.13.x86_64" \
+  -t mbentley/beammp-server:3.9.3 .
 ```
 
 Older versions (`3.2.0` and `3.1.3`) had different artifact names so you need to substitute in `--build-arg ARTIFACT_NAME="BeamMP-Server-debian"`.

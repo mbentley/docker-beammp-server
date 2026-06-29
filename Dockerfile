@@ -1,14 +1,14 @@
 # rebased/repackaged base image that only updates existing packages
-FROM mbentley/debian:bookworm
+FROM mbentley/debian:trixie
 LABEL maintainer="Matt Bentley <mbentley@mbentley.net>"
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG BMPS_VER
-ARG ARTIFACT_NAME="BeamMP-Server.debian.12.x86_64"
+ARG ARTIFACT_NAME="BeamMP-Server.debian.13.x86_64"
 
 # install BeamMP-Server & dependencies
 RUN apt-get update &&\
-  apt-get install --no-install-recommends -y ca-certificates jq liblua5.3-0 libssl3 wget &&\
+  apt-get install --no-install-recommends -y ca-certificates jq liblua5.3-0 libssl3t64 wget &&\
   BMPS_VER=$(if [ -z "${BMPS_VER}" ]; then wget -q -O - https://api.github.com/repos/BeamMP/BeamMP-Server/releases/latest | jq -r .tag_name; else echo "${BMPS_VER}"; fi) &&\
   apt-get purge -y jq &&\
   apt-get autoremove -y &&\
