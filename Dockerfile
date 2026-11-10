@@ -9,7 +9,7 @@ ARG ARTIFACT_NAME="BeamMP-Server.debian.13.x86_64"
 # install BeamMP-Server & dependencies
 RUN apt-get update &&\
   apt-get install --no-install-recommends -y ca-certificates jq liblua5.3-0 libssl3t64 wget &&\
-  BMPS_VER=$(if [ -z "${BMPS_VER}" ]; then wget -q -O - https://api.github.com/repos/BeamMP/BeamMP-Server/releases/latest | jq -r .tag_name; else echo "${BMPS_VER}"; fi) &&\
+  BMPS_VER="${BMPS_VER:-$(wget -q -O - https://api.github.com/repos/BeamMP/BeamMP-Server/releases/latest | jq -r .tag_name)}" &&\
   apt-get purge -y jq &&\
   apt-get autoremove -y &&\
   rm -rf /var/lib/apt/lists/* &&\
